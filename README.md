@@ -16,7 +16,7 @@ Now with the texture version.
 
 ![](https://github.com/deakcor/palette_shadow_material/blob/master/preview3.png)
 
-I used this palette. (row 1 : normal color, row 2 : shadow color).
+I used this palette. (row 1 : normal color, row 2 : shadow color). /!\ I zoomed the palette for the readme but a color must be of 1 pixel.
 
 ![](https://github.com/deakcor/palette_shadow_material/blob/master/palette.png)
 
