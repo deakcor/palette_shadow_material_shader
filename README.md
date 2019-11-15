@@ -20,7 +20,7 @@ I used this palette. (row 1 : normal color, row 2 : shadow color). /!\ I zoomed 
 
 ![](https://github.com/deakcor/palette_shadow_material/blob/master/palette.png)
 
-Specular + rim.
+Specular + rim. (You can get it in the folder example)
 
 ![](https://github.com/deakcor/palette_shadow_material/blob/master/example/preview.gif)
 
