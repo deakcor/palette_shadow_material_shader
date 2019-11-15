@@ -1,6 +1,6 @@
 
 # Palette shadow material shader
-A shader to choose the palette of a material. For godot engine.
+A toon shader allowing to choose the color palette of a material. For godot engine.
 
 ## Preview
 
