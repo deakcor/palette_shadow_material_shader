@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/box.escn-dfb1774c64efb3ea657ac667cb14bffd.scn"
+path="res://.import/Robot.fbx-a0b7285eb75746b39fcd7aaba62865e7.scn"
 
 [deps]
 
-source_file="res://3D/box.escn"
-dest_files=[ "res://.import/box.escn-dfb1774c64efb3ea657ac667cb14bffd.scn" ]
+source_file="res://3D/Robot.fbx"
+dest_files=[ "res://.import/Robot.fbx-a0b7285eb75746b39fcd7aaba62865e7.scn" ]
 
 [params]
 

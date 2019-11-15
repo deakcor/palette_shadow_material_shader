@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://3D/water01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://3D/gem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://3D/Robot.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "loop"
@@ -41,3 +42,6 @@ transform = Transform( 1, 0, 0, 0, 0.797078, 0.603876, 0, -0.603876, 0.797078, 0
 autoplay = "loop"
 playback_speed = 0.2
 anims/loop = SubResource( 1 )
+
+[node name="Robot" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.496982, 0.261399, 0.0788398 )
