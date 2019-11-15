@@ -20,10 +20,22 @@ I used this palette. (row 1 : normal color, row 2 : shadow color). /!\ I zoomed 
 
 ![](https://github.com/deakcor/palette_shadow_material/blob/master/palette.png)
 
+Specular + rim.
+
+![](https://github.com/deakcor/palette_shadow_material/blob/master/example/preview.gif)
+
 ## Parameters
 ### Without texture
 3 colors to choose and a range which allows you to choose at which intensity step to change color.
 ### With texture
-1 palette image (row 1 : normal color, row 2 : shadow color).
-A step at which intensity step to change color.
-1 Texture image.
+**Color_light** and **Color_shadow** (optional, set alpha to 0 to use texture instead)
+
+**palette** palette image, 1 pixel per color (row 1 : normal color, row 2 : shadow color).
+**Tex** Texture image.
+
+**Specular color**
+**Glow reduction** (specular size)
+
+**Rim amount** (0: no rim, 1: full)
+
+**Step** (at which intensity step to change color)
