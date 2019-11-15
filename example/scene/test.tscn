@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://3D/water01.tscn" type="PackedScene" id=1]
+[ext_resource path="res://3D/gem.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "loop"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("camera_cont:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="test" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.218096, 0.661756, -0.717295, 0.0376796, 0.728731, 0.683763, 0.9752, -0.176153, 0.133999, 0, 0, 0 )
+light_energy = 0.5
+
+[node name="gem" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+
+[node name="water01" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.369382, 0, 0 )
+
+[node name="camera_cont" type="Spatial" parent="."]
+transform = Transform( 1, 0, 6.51683e-07, 0, 1, 0, -6.51683e-07, 0, 1, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="camera_cont"]
+transform = Transform( 1, 0, 0, 0, 0.797078, 0.603876, 0, -0.603876, 0.797078, 0, 2.13575, 2.77083 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "loop"
+playback_speed = 0.2
+anims/loop = SubResource( 1 )
