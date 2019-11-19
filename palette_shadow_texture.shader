@@ -1,19 +1,19 @@
 shader_type spatial;
-render_mode cull_disabled;
+render_mode cull_disabled,specular_toon,diffuse_toon;
 
 //for texture
 uniform sampler2D palette;
 uniform sampler2D tex;
 //if no texture
-uniform vec4 color_light:hint_color;
-uniform vec4 color_shadow:hint_color;
+uniform vec4 color_light:hint_color=vec4(1.0);
+uniform vec4 color_shadow:hint_color=vec4(vec3(0.0),1.0);
 //spec
-uniform vec4 specular_color:hint_color;
-uniform float glow_reduction=32;
+uniform vec4 shine_color:hint_color=vec4(0.9);
+uniform float glow_reduction=20;
 //rim
-uniform float rim_amount: hint_range(0.0,1.0);
+uniform float rim_amount: hint_range(0.0,1.0)=0.7;
 //amount of shadow
-uniform float step: hint_range(0.0,1.0);
+uniform float step: hint_range(0.0,1.0)=0.5;
 
 
 vec4 find_color(vec4 texcolor,int p){
@@ -44,8 +44,10 @@ vec4 find_color(vec4 texcolor,int p){
 void fragment()
 {
 	
-	ALBEDO=color_light.rgb;
-	//ALBEDO=texture(tex,UV).rgb;
+	ALBEDO=color_shadow.rgb;
+	ROUGHNESS=0.1;
+	SPECULAR=1.0;
+	METALLIC=0.0;
 }
 
 void light(){
@@ -74,19 +76,19 @@ void light(){
 		
 		
 	//specular
-	vec3 halfVector = normalize(LIGHT + VIEW);
+	vec3 halfVector = normalize(LIGHT);
 	float NdotH = dot(NORMAL, halfVector);
 	float specularIntensity = pow(NdotH * 1.0, glow_reduction*glow_reduction);
-	float specularIntensitySmooth = smoothstep(0.005, 0.01, specularIntensity);
-	vec4 specular = specularIntensitySmooth * specular_color;
+	float specularIntensitySmooth = smoothstep(0.01, 0.01, specularIntensity);
+	vec4 specular = specularIntensitySmooth * shine_color;
 	
 	// Calculate rim lighting.
 	float rimDot = 1.0 - dot(VIEW, NORMAL);
 	float rimIntensity = rimDot * pow(intensity, 0.1);
 	rimIntensity = smoothstep(rim_amount - 0.01, rim_amount + 0.01, rimIntensity);
-	vec4 rim = rimIntensity * specular_color;
+	vec4 rim = rimIntensity * shine_color;
 	
-	DIFFUSE_LIGHT = (rim.rgb+color.rgb+specular.rgb)*LIGHT_COLOR;
-	
+	DIFFUSE_LIGHT = (rim.rgb*rim.a+color.rgb)*LIGHT_COLOR;
+	SPECULAR_LIGHT=specular.rgb*specular.a;
 	
 }
