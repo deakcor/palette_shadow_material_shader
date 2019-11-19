@@ -1,20 +1,19 @@
 shader_type spatial;
-render_mode cull_disabled;
+render_mode cull_disabled,diffuse_toon,specular_toon;
 
 //for texture
 uniform sampler2D palette;
 uniform sampler2D tex;
 //if no texture
-uniform vec4 color_light:hint_color;
-uniform vec4 color_shadow:hint_color;
+uniform vec4 color_light:hint_color=vec4(1.0);
+uniform vec4 color_shadow:hint_color=vec4(vec3(0.0),1.0);
 //spec
-uniform vec4 specular_color:hint_color;
+uniform vec4 specular_color:hint_color=vec4(0.9);
 uniform float glow_reduction=32;
 //rim
-uniform float rim_amount: hint_range(0.0,1.0);
+uniform float rim_amount: hint_range(0.0,1.0)=1.0;
 //amount of shadow
-uniform float step: hint_range(0.0,1.0);
-
+uniform float step: hint_range(0.0,1.0)=0.5;
 
 vec4 find_color(vec4 texcolor,int p){
 	int pos=0;
@@ -44,7 +43,11 @@ vec4 find_color(vec4 texcolor,int p){
 void fragment()
 {
 	
-	ALBEDO=color_light.rgb;
+	ALBEDO=color_shadow.rgb;
+	METALLIC=0.0;
+	ROUGHNESS = 0.0;
+	SPECULAR = 0.0;
+	
 	//ALBEDO=texture(tex,UV).rgb;
 }
 
