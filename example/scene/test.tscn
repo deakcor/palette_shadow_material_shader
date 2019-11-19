@@ -71,6 +71,7 @@ material = SubResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.218096, 0.661756, -0.717295, 0.0376796, 0.728731, 0.683763, 0.9752, -0.176153, 0.133999, 0, 0, 0 )
+visible = false
 light_energy = 0.5
 
 [node name="gem" parent="." instance=ExtResource( 2 )]
@@ -80,7 +81,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.369382, 0, 0 )
 
 [node name="camera_cont" type="Spatial" parent="."]
-transform = Transform( 1, 0, 6.51683e-07, 0, 1, 0, -6.51683e-07, 0, 1, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="camera_cont"]
 transform = Transform( 1, 0, 0, 0, 0.797078, 0.603876, 0, -0.603876, 0.797078, 0, 2.13575, 2.77083 )
@@ -97,3 +97,6 @@ transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.496982, 0.261399, 0.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20798, 0, 0 )
 mesh = SubResource( 4 )
 material/0 = null
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0538459, 1.75517, 1.11698 )
