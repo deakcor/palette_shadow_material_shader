@@ -8,8 +8,8 @@
 shader = ExtResource( 1 )
 shader_param/color_light = Color( 0.67451, 0.203922, 0.203922, 0 )
 shader_param/color_shadow = Color( 0.337255, 0.152941, 0.152941, 0 )
-shader_param/specular_color = Color( 0.941176, 0.941176, 0.941176, 1 )
-shader_param/glow_reduction = 32.0
+shader_param/shine_color = Color( 0.901961, 0.901961, 0.901961, 0.843137 )
+shader_param/glow_reduction = 5.0
 shader_param/rim_amount = 0.75
 shader_param/step = 0.5
 shader_param/palette = ExtResource( 2 )

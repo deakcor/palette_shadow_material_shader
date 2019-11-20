@@ -98,5 +98,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.20798, 0, 0 )
 mesh = SubResource( 4 )
 material/0 = null
 
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0538459, 1.75517, 1.11698 )
+[node name="OmniLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.146924, 0.882677, -0.446424, -0.27594, 0.46998, 0.838437, 0.949879, -1.41543e-08, 0.312617, 0.0538459, 1.75517, 1.11698 )
+light_energy = 0.5
